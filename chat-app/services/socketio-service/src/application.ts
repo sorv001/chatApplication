@@ -44,6 +44,10 @@ export class SocketIoExampleApplication extends BootMixin(SocketIoApplication) {
         methods: ['GET', 'POST'],
       },
     } as ServerOptions);
+
+
+    
+
     super(options);
 
     this.projectRoot = __dirname;

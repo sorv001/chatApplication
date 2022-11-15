@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {NgxNotificationModule} from 'ngx-notification';
 import { LoginComponent } from './login/login.component';
-import { ChatComponent } from './chat/chat.component'
+import { ChatComponent } from './chat/chat.component';
 import { UserService } from './chat.service';
 
 @NgModule({
@@ -34,7 +34,8 @@ import { UserService } from './chat.service';
     FormsModule,
     HttpClientModule,
     NbChatModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxNotificationModule
   ],
   providers: [UserService],//userService add 
   bootstrap: [AppComponent]

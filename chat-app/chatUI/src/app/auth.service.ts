@@ -32,7 +32,7 @@ export class AuthService{
 
     getToken(code: string){
         return this.http.post<{accessToken:string, refreshToken:string,expires:Number}>(tokenUrl,{
-            code:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRJZCI6InRlc3RfY2xpZW50X2lkIiwidXNlciI6eyJkZWxldGVkIjpmYWxzZSwiZGVsZXRlZE9uIjpudWxsLCJkZWxldGVkQnkiOm51bGwsImNyZWF0ZWRPbiI6IjIwMjItMTEtMDlUMDU6MDI6NDIuNTc1WiIsIm1vZGlmaWVkT24iOiIyMDIyLTExLTA5VDA2OjA1OjQ5Ljg2OFoiLCJjcmVhdGVkQnkiOm51bGwsIm1vZGlmaWVkQnkiOiI0MzMxNWYxZi05ZjVlLTM4MGUtNmY2ZS0wYWUwYmE0MmE5OGMiLCJpZCI6IjQzMzE1ZjFmLTlmNWUtMzgwZS02ZjZlLTBhZTBiYTQyYTk4YyIsImZpcnN0TmFtZSI6IkFkbWluIiwibGFzdE5hbWUiOiJVc2VyIiwibWlkZGxlTmFtZSI6bnVsbCwidXNlcm5hbWUiOiJhZG1pbkBleGFtcGxlLmNvbSIsImVtYWlsIjoiYWRtaW5AZXhhbXBsZS5jb20iLCJwaG9uZSI6bnVsbCwiYXV0aENsaWVudElkcyI6WzFdLCJsYXN0TG9naW4iOiIyMDIyLTExLTA5VDA2OjA1OjQ5Ljg2N1oiLCJkb2IiOm51bGwsImdlbmRlciI6bnVsbCwiZGVmYXVsdFRlbmFudElkIjoiMGRkZmE3ZjEtNTQ5Zi0yYjcxLWNiNDktOTQ4YWE4NzEyNmQwIiwicGVybWlzc2lvbnMiOltdfSwiaWF0IjoxNjY3OTkwMjM4LCJleHAiOjE2Njc5OTA0MTgsImF1ZCI6InRlc3RfY2xpZW50X2lkIiwiaXNzIjoic2F1cmFiaCJ9.7EQWq2YDMU9KadzNmdpktJ33S7fcgSfT5mSwvytENYU",
+            code:code,
             clientId:"test_client_id"
         })
     }

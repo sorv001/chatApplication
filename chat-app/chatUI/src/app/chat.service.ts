@@ -7,7 +7,9 @@ import { environment } from "src/environments/environment";
 const baseUrl = `${environment.BASE_URL}/messages`;
 const tenantIdUrl = `${environment.BASE_URL}/userTenantId`;
 
-@Injectable()
+@Injectable({
+    providedIn:'root',
+})
 export class UserService{
     constructor(private readonly http:HttpClient){}
 

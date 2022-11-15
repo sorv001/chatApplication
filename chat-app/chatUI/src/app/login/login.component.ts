@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
 
 import { first } from 'rxjs/operators';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -42,27 +41,31 @@ export class LoginComponent implements OnInit {
     return true;
   }
 
-  onSubmit(){
+  signIn(){
     this.submitted = true;
     if(!this.validateForm() && this.loginForm.invalid){
       return ;
     }
     console.log(this.details['username'].value, this.details['password'].value);
     this.loading = true;
-
+    console.log('1');
     this.authenticationService
       .login(this.details['username'].value, this.details['password'].value)
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(['welcome'],{
+          // console.log('2');
+          this.router.navigate(['chat'],{
             queryParams: {code:data.code},
           });
         },
         error =>{
+          console.log('3');
           this.loading = false;
         },
+        
       );
+      console.log('4');
   }
 
   loginViaGoogle(){
